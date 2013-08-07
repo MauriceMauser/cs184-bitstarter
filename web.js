@@ -3,9 +3,8 @@ var fs = require('fs');
 var app = express();
 app.use(express.logger());
 
-var hello_text = fs.readFileSync('index.html', encoding);
-
 app.get('/', function(request, response) {
+  var hello_text = fs.readFileSync('index.html', 'utf-8');
   response.send(hello_text);
 });
 
